@@ -61,11 +61,33 @@ fn main()
 # Rustの環境を構築する
 RustをWindowsで開発するための環境構築をガイドします。
 
+## VisualStudio
+**Rust**ではC++コンパイラを必要するのでVisualStudio2022の更新がされていることを確認してください。
+
 ## Rustコンパイラとパッケージ管理システムをインストールする
 
 [Rust公式サイト](https://www.rust-lang.org/tools/install)から64bitの方の.exeファイルを入手して実行してください。
 
+![image](./img/rust_1.webp)
+
+このような画面が出るので「y」を入力してエンターキーを押してください。
+
+すると色々なログが流れていきます。
+
+![image](./img/rust_2.webp)
+
+そしてこのような画面が出るので「１」を押してまたエンターキーを押してください
+
+![image](./img/rust_3.webp)
+
+最後にこの画面がでたらエンターキーを押して**Rust**のインストールは完了です。
+
 ## Visual Studio CodeでRustを開発する準備
+
+次にRustをVSCodeで開発しやすくなる拡張機能を導入しましょう。
+以下のように検索して***rust-analyzer***をインストールしてください。これがまじで神なので。
+
+![image](./img/rust_4.webp)
 
 # Rustを動かしてみる
 Rustの環境構築が完了したので軽く動作確認をしてみましょう。以下の動作は**Windows Power Shell**で行います。
@@ -80,9 +102,8 @@ cargo new [パッケージの名前]
 ```
 
 今回は下のコマンドによって<u>**hello_rust**</u>というパッケージを作成しました。
-```sh
-cargo new hello_rust
-```
+
+![image](./img/rust_5.png)
 
 するとhello_rustというフォルダが作成されていてその中には以下のファイル、フォルダが存在するはずです。
 
@@ -105,6 +126,8 @@ cd hello_rust
 ```sh
 code .
 ```
+
+![image](./img/rust_6.webp)
 
 まずはじめに<u>**Cargo.toml**</u>の中身を見ていきましょう。
 ```toml
@@ -147,27 +170,11 @@ fn main() {
 ## 焦土作戦実行！！
 それではRustのコードを実行してみましょう。もう一度 ***Windows PowerShell***を開いてください。
 
-そしてパッケージ内に移動できていることを確認できたら以下のコマンドでビルドしてください。
-
-```sh
-cargo build
-```
-すると以下のような表示が見られるはず。
-```
-Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.00s
-```
-
 実行する場合には以下のコマンドです。
 ```sh
 cargo run
 ```
 
-<br><br><br>
-
 以下のような実行結果が得られるはず。
-```
-Compiling hello_rust v0.1.0 (/home/motii/hello_rust)
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s
-     Running `target/debug/hello_rust`
-Hello, 焦土作戦実行！！
-```
+
+![image](./img/rust_7.webp)
